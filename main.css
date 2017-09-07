@@ -1,0 +1,269 @@
+/*resetting the web browser*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*I prefer to use border box*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    /*I am so far more comfortable to use css without the preprocessor before of lack experience in the preprocess itself (basic knowledge of less)*/
+    /*I aware that using preprocessor css would be so much easier in the future*/
+    font-family: Lato;
+    text-align: center;
+    color: #1DA1F2;
+}
+
+
+/*the top part of the title*/
+
+header {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-size: 3em;
+}
+
+
+/*use div to seperate top part and bottom instruction*/
+
+.background-top {
+    background-image: url(images/cloudy-sky-from-above_4460x4460.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 20%;
+    background-attachment: fixed;
+    height: 850px;
+}
+
+
+/*give extra layer to make background a little bit darker*/
+
+.transparent {
+    background-image: url(images/transparent.jpg);
+    height: 850px;
+    opacity: 0.8;
+}
+
+
+/*eighty percent to limit the width*/
+
+
+/*I prefer to use eighty percents on each one of section needed because 80% on main will cut the background image*/
+
+.eighty-percent {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*the main process starts here*/
+
+.main-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/*input any wikipedia link instruction*/
+
+.instruction {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-family: Josefin Sans;
+}
+
+
+/*I give more space to input value so that people can see wider link, but with min-width if someone try to use mobile phone to access this app*/
+
+#input-value {
+    display: block;
+    border: 1px solid #1DA1F2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 30%;
+    min-width: 300px;
+}
+
+
+/*button for enter*/
+
+button {
+    background-color: white;
+    border: 3px solid #1DA1F2;
+    padding: 10px;
+    border-radius: 50px;
+    color: #1DA1F2;
+    font-size: 1.2em
+}
+
+
+/*animation when the user hover the button*/
+
+button:hover {
+    background-color: #1DA1F2;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*bottom of these are the style for the rendering process*/
+
+.list-of-answers {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fa-long-arrow-right {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.answer-process {
+    font-size: 1.5em;
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+}
+
+.total-pathway {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+
+/*background for the bottom part*/
+
+.background-bottom {
+    background-color: #1DA1F2;
+}
+
+
+/*give some padding*/
+
+.new-comers {
+    padding-top: 30px;
+}
+
+
+/*style for "about this app"*/
+
+.title-new-comers-section {
+    color: white;
+    font-size: 2em;
+}
+
+
+/*video and word to make it in the middle and have padding on top and bottom*/
+
+.video-and-word {
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+
+/*I have few LIs inside video and word class so this one I just want to target the direct child*/
+
+.video-and-word > li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 46%;
+}
+
+
+/*explanation on the right hand side*/
+
+.words {
+    vertical-align: top;
+}
+
+
+/*make the color white with line height should not be more than 140%*/
+
+.words p {
+    color: white;
+    line-height: 140%;
+}
+
+
+/*rules of this app for the user*/
+
+.rules {
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: left;
+    margin-top: 20px;
+}
+
+ol li {
+    color: white;
+    text-align: left;
+    margin-left: 15px;
+}
+
+
+/*small footer to end the page*/
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*media query*/
+
+
+/*first media query created to remove the image and explanation to close*/
+
+@media only screen and (max-width: 1550px) {
+    .video-and-word > li {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+    .rules {
+        text-align: center;
+    }
+}
+
+
+/*second media query for mobile user with small scree*/
+
+
+/*the video will be too small, so might as well remove it.*/
+
+
+/*The video only here to make sure my explanation become way more clearer*/
+
+@media only screen and (max-width: 676px) {
+    iframe {
+        display: none;
+    }
+    .video-and-word {
+        padding-top: 10px;
+    }
+}
