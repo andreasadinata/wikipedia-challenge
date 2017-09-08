@@ -40,7 +40,7 @@ h1 {
 
 /*use div to seperate top part and bottom instruction*/
 
-.background-top {
+.main-section {
     background-image: url(images/cloudy-sky-from-above_4460x4460.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +73,7 @@ h1 {
 
 /*the main process starts here*/
 
-.main-section {
+.search-section {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -170,14 +170,14 @@ button:hover {
 
 /*background for the bottom part*/
 
-.background-bottom {
+.information {
     background-color: #1DA1F2;
 }
 
 
 /*give some padding*/
 
-.new-comers {
+#new-comers {
     padding-top: 30px;
 }
 
