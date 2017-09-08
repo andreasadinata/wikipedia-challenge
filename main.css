@@ -75,6 +75,20 @@ header {
     text-align: center;
 }
 
+.explanation {
+    float: left;
+    font-size: 0.2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
 
 /*input any wikipedia link instruction*/
 

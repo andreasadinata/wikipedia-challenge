@@ -3,7 +3,8 @@ var buildHtmlOutput = ""; //for rendering purpose
 var loopCheck = new Set(); //set to have O(1) check time
 var buildFinalCount = ""; //show the last variable
 var totalPages = []; //store the data since the instruction is to get the all pages stored
-//I am aware that global variable is bad, and I wont do it in the future
+//I am aware that global variable is bad, and I wont do it in the future, but I just want to make it more clearer
+//Because it is so much easier to be read but dangerous because it can mixed up with other things
 
 //function to render any found page
 function renderResult(page) {
@@ -49,7 +50,7 @@ function doTheLoop(longText) {
                 currentOpenBrackets = i
                 currentBrackets++
             }
-            //if we find any suitable href (11=red link, 10=voice, and 19=language)
+            //if we find any suitable href (11=red link, 10=voice, and 19=language and interwikifile)
             else if (paragraph[i] === '<' && paragraph[i + 1] === 'a' && paragraph[i + 11] !== '/' && paragraph[i + 10] !== '/' && paragraph[i + 19] !== ':')
 
             {
@@ -166,4 +167,16 @@ $(document).ready(function () {
             getSearch(tempArray[tempArray.length - 1]) //if its valid then we good to go
         }
     });
+    $("a").on('click', function (event) { //smooth scroll feature
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+                window.location.hash = hash;
+            });
+        } // End if
+    })
 });
